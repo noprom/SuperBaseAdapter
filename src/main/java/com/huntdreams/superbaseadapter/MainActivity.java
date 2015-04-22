@@ -1,17 +1,40 @@
 package com.huntdreams.www.myapplication;
 
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ListView;
+
+import com.huntdreams.superbaseadapter.bean.Bean;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class MainActivity extends ActionBarActivity {
+
+    private ListView mListView;
+    private List<Bean> mDatas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        initDatas();
+        initView();
+    }
+
+    private void initView() {
+        mListView = (ListView) findViewById(R.id.listview);
+    }
+
+    private void initDatas() {
+        mDatas = new ArrayList<Bean>();
+        for (int i=0;i<5;++i){
+            Bean bean = new Bean("猎梦网"+i,"这是北京猎梦科技啊啊","2015-04-25","18819555555");
+            mDatas.add(bean);
+        }
     }
 
 
