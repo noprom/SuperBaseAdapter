@@ -8,7 +8,6 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.huntdreams.superbaseadapter.bean.Bean;
-import com.huntdreams.www.myapplication.R;
 
 import java.util.List;
 

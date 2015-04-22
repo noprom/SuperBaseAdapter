@@ -1,4 +1,4 @@
-package com.huntdreams.www.myapplication;
+package com.huntdreams.superbaseadapter;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -6,8 +6,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
 
-import com.huntdreams.superbaseadapter.MyAdapter;
-import com.huntdreams.superbaseadapter.SuperAdapter;
 import com.huntdreams.superbaseadapter.bean.Bean;
 
 import java.util.ArrayList;
