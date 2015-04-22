@@ -6,6 +6,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
 
+import com.huntdreams.superbaseadapter.MyAdapter;
 import com.huntdreams.superbaseadapter.bean.Bean;
 
 import java.util.ArrayList;
@@ -16,6 +17,7 @@ public class MainActivity extends ActionBarActivity {
 
     private ListView mListView;
     private List<Bean> mDatas;
+    private MyAdapter mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +29,7 @@ public class MainActivity extends ActionBarActivity {
 
     private void initView() {
         mListView = (ListView) findViewById(R.id.listview);
+        mListView.setAdapter(mAdapter);
     }
 
     private void initDatas() {
@@ -35,6 +38,7 @@ public class MainActivity extends ActionBarActivity {
             Bean bean = new Bean("猎梦网"+i,"这是北京猎梦科技啊啊","2015-04-25","18819555555");
             mDatas.add(bean);
         }
+        mAdapter = new MyAdapter(this,mDatas);
     }
 
 
