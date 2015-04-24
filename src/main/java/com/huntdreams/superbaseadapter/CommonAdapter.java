@@ -6,6 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
+import com.huntdreams.superbaseadapter.utils.ViewHolder;
+
 import java.util.List;
 
 /**
@@ -29,7 +31,7 @@ public abstract class CommonAdapter<T> extends BaseAdapter{
     }
 
     @Override
-    public Object getItem(int i) {
+    public T getItem(int i) {
         return mDatas.get(i);
     }
 
@@ -39,5 +41,11 @@ public abstract class CommonAdapter<T> extends BaseAdapter{
     }
 
     @Override
-    public abstract View getView(int i, View view, ViewGroup viewGroup);
+    public View getView(int position, View convertView, ViewGroup parent){
+        ViewHolder viewHolder = ViewHolder.get(mContext,convertView,parent,R.layout.item_listview,position);
+        convert(viewHolder,getItem(position));
+        return viewHolder.getConvertView();
+    }
+
+    public abstract void convert(ViewHolder viewHolder,T t);
 }
